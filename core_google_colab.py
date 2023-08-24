@@ -52,8 +52,15 @@ next_button = WebDriverWait(driver, 10).until(
     EC.element_to_be_clickable((By.XPATH, '//span[text()="Next"]'))
 )
 next_button.click()
-time.sleep(3)
+time.sleep(10)
+driver.find_element(By.CLASS_NAME, "left-pane-button:nth-child(4) paper-icon-button").click()
+time.sleep(5)
+icon_element = WebDriverWait(driver, 10).until(
+    EC.element_to_be_clickable((By.CSS_SELECTOR, 'iron-icon[icon="colab:file-upload"]'))
+)
 
+# Click the iron-icon element
+icon_element.click()
 
 
 
