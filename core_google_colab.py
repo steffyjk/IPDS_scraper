@@ -10,10 +10,10 @@ import os
 load_dotenv()
 email = os.environ.get("email")
 pwd = os.environ.get("password")
-google_collab_id = os.environ.get("google_collab_id")
+google_collab_link = os.environ.get("google_collab_link")
 driver = webdriver.Chrome()
 
-driver.get(google_collab_id)
+driver.get(google_collab_link)
 
 time.sleep(5)
 icon = driver.find_element(By.CLASS_NAME, "left-pane-button:nth-child(4) paper-icon-button").click()
