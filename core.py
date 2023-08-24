@@ -64,7 +64,7 @@ try:
         td = div.find_elements(By.TAG_NAME, "td")
         time.sleep(3)
         # for i in td:
-            # print(i.text)
+        # print(i.text)
         a_tag = div.find_elements(By.TAG_NAME, "a")
         time.sleep(3)
         apl_card = a_tag[1].click()
@@ -103,6 +103,21 @@ try:
                 "relation": mem_detail[4].text,
             })
 
+        print(final_data)
+        # Convert data to JSON string
+        import json
+
+        json_string = json.dumps(final_data, ensure_ascii=False, indent=4)
+
+        # Specify the file name you want to save
+        file_name = "output_data.json"
+
+        # Write JSON string to a file
+        with open(file_name, "w", encoding="utf-8") as json_file:
+            json_file.write(json_string)
+
+        print(f"Data has been saved to '{file_name}'.")
+
 
 
 
@@ -112,5 +127,5 @@ try:
 
 
 
-except Exception:
-    print("there is some errorf")
+except Exception as e:
+    print("there is some error", e)
